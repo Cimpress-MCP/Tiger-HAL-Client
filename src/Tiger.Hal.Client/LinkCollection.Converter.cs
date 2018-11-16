@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using static Tiger.Hal.Client.Cardinality;
 
 namespace Tiger.Hal.Client
 {
@@ -32,15 +33,23 @@ namespace Tiger.Hal.Client
             const string Message = "The provided value could not be converted into a HAL link or a collection of HAL links.";
 
             /// <inheritdoc/>
-            public override bool CanWrite => false;
-
-            /// <inheritdoc/>
-            /// <exception cref="NotSupportedException"><see cref="CanWrite"/> is <see langword="false"/>.</exception>
             public override void WriteJson(
                 JsonWriter writer,
                 [CanBeNull] LinkCollection value,
-                [NotNull] JsonSerializer serializer) =>
-                throw new NotSupportedException("CanWrite is false.");
+                [NotNull] JsonSerializer serializer)
+            {
+                switch (value.Cardinality)
+                {
+                    case Singular:
+                        serializer.Serialize(writer, value.Items[0], typeof(Link));
+                        return;
+                    case Plural:
+                        serializer.Serialize(writer, value.Items, typeof(IList<Link>));
+                        return;
+                }
+
+                throw new JsonSerializationException("A catastropic error has occurred.");
+            }
 
             /// <inheritdoc/>
             public override LinkCollection ReadJson(
