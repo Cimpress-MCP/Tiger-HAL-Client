@@ -88,6 +88,15 @@ namespace Tiger.Hal.Client {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Link relation &apos;{0}&apos; is not an absolute URI!.
+        /// </summary>
+        public static string NotAbsoluteUri {
+            get {
+                return ResourceManager.GetString("NotAbsoluteUri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value for link relation &apos;{0}&apos; is not present!.
         /// </summary>
         public static string RelationMissing {

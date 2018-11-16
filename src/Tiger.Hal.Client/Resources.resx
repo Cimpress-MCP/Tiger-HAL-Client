@@ -129,6 +129,10 @@
     <value>Link is a templated link!</value>
     <comment>Href is not supported.</comment>
   </data>
+  <data name="NotAbsoluteUri" xml:space="preserve">
+    <value>Link relation '{0}' is not an absolute URI!</value>
+    <comment>Relative URIs are NG.</comment>
+  </data>
   <data name="RelationMissing" xml:space="preserve">
     <value>Value for link relation '{0}' is not present!</value>
     <comment>The rel was not a key in the dictionary.</comment>

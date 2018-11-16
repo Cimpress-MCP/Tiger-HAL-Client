@@ -11,19 +11,19 @@ cache:
 build:
   stage: build
   script:
-    - dotnet build -c Release
+    - dotnet build --configuration Release
   artifacts:
     untracked: true
 
 test:
   stage: test-pack
   script:
-    - dotnet test -c Release ./unit/Test.csproj
+    - dotnet test --configuration Release ./unit/Test.csproj
 
 pack:
   stage: test-pack
   script:
-    - dotnet pack -c Release -o "$(pwd)/dist/"
+    - dotnet pack --configuration Release --output "$(pwd)/dist/"
   artifacts:
     untracked: false
     paths:
@@ -32,6 +32,6 @@ pack:
 deploy:
   stage: deploy
   script:
-    - dotnet nuget push ./dist/*.nupkg -k $NUGET_API_KEY
+    - dotnet nuget push ./dist/*.nupkg --api-key $NUGET_API_KEY
   only:
     - master

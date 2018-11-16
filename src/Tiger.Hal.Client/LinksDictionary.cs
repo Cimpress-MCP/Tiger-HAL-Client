@@ -17,6 +17,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using JetBrains.Annotations;
 using static System.Globalization.CultureInfo;
@@ -89,6 +90,25 @@ namespace Tiger.Hal.Client
         /// <inheritdoc/>
         [NotNull]
         public LinkToken this[[NotNull] string key] => new LinkToken(key, _links[key]);
+
+        /// <summary>Gets the element that has the specified key in the read-only dictionary.</summary>
+        /// <param name="key">The key to locate.</param>
+        /// <returns>The element that has the key in the read-only dictionary.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="key"/> is <see langword="null"/>.</exception>
+        /// <exception cref="ArgumentException"><paramref name="key"/> is not an absolute URI.</exception>
+        /// <exception cref="KeyNotFoundException">The property is retrieved and <paramref name="key"/> is not found.</exception>
+        [NotNull]
+        [SuppressMessage("Microsoft.Guidelines", "CA1043", Justification = "A URI is just a string with a format.")]
+        public LinkToken this[[NotNull] Uri key]
+        {
+            get
+            {
+                if (key is null) { throw new ArgumentNullException(nameof(key)); }
+                if (!key.IsAbsoluteUri) { throw new ArgumentException(string.Format(InvariantCulture, NotAbsoluteUri, key), nameof(key)); }
+
+                return new LinkToken(key.AbsoluteUri, _links[key.AbsoluteUri]);
+            }
+        }
 
         /// <inheritdoc/>
         LinkCollection IDictionary<string, LinkCollection>.this[string key]

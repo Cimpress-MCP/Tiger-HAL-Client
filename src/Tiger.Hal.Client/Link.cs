@@ -31,7 +31,9 @@ namespace Tiger.Hal.Client
     public sealed class Link
         : LinkBase
     {
+        [JsonProperty("href")]
         readonly string _rawHref;
+
         readonly Lazy<Uri> _href;
 
         /// <summary>Initializes a new instance of the <see cref="Link"/> class.</summary>
@@ -75,10 +77,12 @@ namespace Tiger.Hal.Client
 
         /// <summary>Gets the location of the target resource as a <see cref="Uri"/>.</summary>
         /// <exception cref="NotSupportedException"><see cref="LinkBase.IsTemplated"/> is <see langword="true"/>.</exception>
+        [JsonIgnore]
         public Uri Href => _href.Value;
 
         /// <summary>Gets the location of the target resource as a <see cref="UriTemplate"/>.</summary>
         /// <exception cref="NotSupportedException"><see cref="LinkBase.IsTemplated"/> is <see langword="false"/>.</exception>
+        [JsonIgnore]
         public UriTemplate TemplatedHref
         {
             get
