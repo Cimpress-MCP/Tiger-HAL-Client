@@ -1,10 +1,11 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.Hal.Client", "src\Tiger.Hal.Client\Tiger.Hal.Client.csproj", "{D8162FF6-0D81-4E89-821E-050CCCB8A8A8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiger.Hal.Client", "src\Tiger.Hal.Client\Tiger.Hal.Client.csproj", "{4915844F-6BF9-4193-A594-5F3F7E890AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "unit\Test.csproj", "{D40DF8B3-69D3-48CD-9E4A-212A5A0934FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "unit\Test.csproj", "{5A583F23-936F-4CE4-BF01-A2FE19EA916F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,16 +16,13 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D8162FF6-0D81-4E89-821E-050CCCB8A8A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8162FF6-0D81-4E89-821E-050CCCB8A8A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8162FF6-0D81-4E89-821E-050CCCB8A8A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8162FF6-0D81-4E89-821E-050CCCB8A8A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D40DF8B3-69D3-48CD-9E4A-212A5A0934FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D40DF8B3-69D3-48CD-9E4A-212A5A0934FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D40DF8B3-69D3-48CD-9E4A-212A5A0934FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D40DF8B3-69D3-48CD-9E4A-212A5A0934FE}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{D8162FF6-0D81-4E89-821E-050CCCB8A8A8} = {8015DEA8-10B7-4876-832A-ACFBD3C588B3}
+		{4915844F-6BF9-4193-A594-5F3F7E890AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4915844F-6BF9-4193-A594-5F3F7E890AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4915844F-6BF9-4193-A594-5F3F7E890AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4915844F-6BF9-4193-A594-5F3F7E890AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A583F23-936F-4CE4-BF01-A2FE19EA916F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A583F23-936F-4CE4-BF01-A2FE19EA916F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A583F23-936F-4CE4-BF01-A2FE19EA916F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A583F23-936F-4CE4-BF01-A2FE19EA916F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
